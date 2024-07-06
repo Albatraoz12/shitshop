@@ -25,6 +25,12 @@ main {
   max-width: 300px;
   padding: 1rem;
   border: 1px solid black;
+  height: 390px;
+}
+
+a {
+  text-decoration: none;
+  color: black;
 }
 
 .card-container figure img {
@@ -51,4 +57,12 @@ main {
   display: box;
   box-orient: vertical;
   line-clamp: 2;
+}
+
+.products-list-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  gap: 1rem;
 }

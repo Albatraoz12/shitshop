@@ -1,5 +1,5 @@
 import { useEffect, useState } from 'react';
-import Card from '../compoment/Card';
+import CardList from '../compoment/CardList';
 
 const Home = () => {
   const [items, setItems] = useState(null);
@@ -10,7 +10,6 @@ const Home = () => {
         const response = await fetch('https://fakestoreapi.com/products');
         const data = await response.json();
         setItems(data);
-        console.log(data);
       } catch (error) {
         console.log(error);
       }
@@ -21,7 +20,7 @@ const Home = () => {
   return (
     <main>
       <h1>All items</h1>
-      <Card />
+      {items && <CardList products={items} />}
     </main>
   );
 };
