@@ -6,6 +6,7 @@ const Navbar = () => {
       <div className='logo'>
         <Link to='/'>
           <img src='/logo.svg' alt='logo' height={40} width={50} />
+          <span>Shitstore</span>
         </Link>
       </div>
       <div className='cart'>
