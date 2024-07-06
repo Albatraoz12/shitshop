@@ -25,10 +25,13 @@ const Product = () => {
             </figure>
           </div>
 
-          <div className='product-desc'>
+          <div className='product-desc-container'>
             <h2>{product.title}</h2>
             <button className='add-btn'>Add to cart!</button>
-            <p>{product.description}</p>
+            <div className='product-desc'>
+              <h3>Description</h3>
+              <p>{product.description}</p>
+            </div>
           </div>
         </>
       )}
