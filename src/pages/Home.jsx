@@ -1,4 +1,5 @@
 import { useEffect, useState } from 'react';
+import Card from '../compoment/Card';
 
 const Home = () => {
   const [items, setItems] = useState(null);
@@ -18,10 +19,10 @@ const Home = () => {
   }, []);
 
   return (
-    <div>
-      <h2>All items</h2>
-      <pre>{JSON.stringify(items, null, 2)}</pre>
-    </div>
+    <main>
+      <h1>All items</h1>
+      <Card />
+    </main>
   );
 };
 

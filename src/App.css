@@ -13,3 +13,18 @@
   justify-content: space-between;
   align-items: center;
 }
+
+main {
+  margin-inline: 1rem;
+}
+
+.card-container {
+  max-width: 300px;
+  padding: 1rem;
+  border: 1px solid black;
+}
+
+.card-container figure img {
+  width: 100%;
+  height: 200px;
+}
