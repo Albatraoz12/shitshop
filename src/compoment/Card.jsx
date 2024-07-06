@@ -1,3 +1,5 @@
+import { Link } from 'react-router-dom';
+
 const Card = () => {
   const item = {
     id: 1,
@@ -14,14 +16,16 @@ const Card = () => {
   };
 
   return (
-    <div className='card-container'>
-      <figure>
-        <img src={item.image} alt={item.title} />
-      </figure>
-      <span className='card-price'>{item.price} €</span>
-      <h2 className='card-title'>{item.title}</h2>
-      <p className='card-desc'>{item.description}</p>
-    </div>
+    <Link to={`/product/${item.id}`}>
+      <div className='card-container'>
+        <figure>
+          <img src={item.image} alt={item.title} />
+        </figure>
+        <span className='card-price'>{item.price} €</span>
+        <h2 className='card-title'>{item.title}</h2>
+        <p className='card-desc'>{item.description}</p>
+      </div>
+    </Link>
   );
 };
 
