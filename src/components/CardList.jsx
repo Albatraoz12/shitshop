@@ -21,7 +21,7 @@ const CardList = ({ products }) => {
   };
 
   return (
-    <div>
+    <div className='products-container'>
       <div className='products-list-container'>
         {currentProducts.map((product) => (
           <Card key={product.id} product={product} />
