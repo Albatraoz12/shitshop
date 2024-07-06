@@ -26,10 +26,11 @@ const Product = () => {
           </div>
 
           <div className='product-desc-container'>
-            <h2>{product.title}</h2>
+            <h1>{product.title}</h1>
+            <span className='product-price'>{product.price} €</span>
             <button className='add-btn'>Add to cart!</button>
             <div className='product-desc'>
-              <h3>Description</h3>
+              <h2>Description</h2>
               <p>{product.description}</p>
             </div>
           </div>
