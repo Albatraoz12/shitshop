@@ -4,6 +4,7 @@ import { useParams } from 'react-router-dom';
 const Product = () => {
   const { id } = useParams();
   const [product, setProduct] = useState(null);
+
   useEffect(() => {
     const fetchProduct = async () => {
       const response = await fetch(`https://fakestoreapi.com/products/${id}`);
@@ -26,7 +27,7 @@ const Product = () => {
 
           <div className='product-desc'>
             <h2>{product.title}</h2>
-            <button>Add to cart!</button>
+            <button className='add-btn'>Add to cart!</button>
             <p>{product.description}</p>
           </div>
         </>

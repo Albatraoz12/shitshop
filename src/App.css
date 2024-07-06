@@ -16,12 +16,7 @@
   align-items: center;
 }
 
-/* Main content margin */
-main {
-  margin-inline: 1rem;
-}
-
-/* Card container styles */
+/* Card component styles */
 .card-container {
   display: flex;
   flex-direction: column;
@@ -32,32 +27,27 @@ main {
   height: 390px;
 }
 
-/* Anchor tag styles */
 a {
   text-decoration: none;
   color: black;
 }
 
-/* Image styles inside card container */
 .card-container figure img {
   width: 100%;
   height: 200px;
   object-fit: contain;
 }
 
-/* Card price styles */
 .card-price {
   color: green;
   font-size: 1.5rem;
 }
 
-/* Card title styles */
 .card-title {
   font-size: 1.2rem;
   font-weight: bold;
 }
 
-/* Card description styles */
 .card-desc {
   display: -webkit-box;
   -webkit-box-orient: vertical;
@@ -77,35 +67,49 @@ a {
   gap: 1rem;
 }
 
-/* Product container styles */
+/* Product page styles */
 .product-container {
   margin-top: 2rem;
   display: flex;
   justify-content: center;
-  margin: 0 auto;
   width: 100%;
 }
 
-/* Image styles inside product container */
 .product-container figure img {
   max-height: 60vh;
   object-fit: contain;
 }
 
-/* Product image styles */
 .product-image {
   border-right: 1px solid black;
   padding-inline: 2rem;
 }
 
-/* Product description styles */
 .product-desc {
   width: 100%;
   display: flex;
   flex-direction: column;
   gap: 3rem;
   padding-inline: 2rem;
+  max-width: 450px;
+}
+
+.add-btn {
+  padding: 1rem;
+  font-weight: bold;
+  font-size: 1rem;
+  border: none;
+  border-radius: 10px;
+  background-color: green;
+  color: white;
   max-width: 350px;
+}
+
+.add-btn:hover,
+.add-btn:active,
+.add-btn:focus {
+  background-color: darkgreen;
+  outline: none;
 }
 
 /* Media query for screen sizes less than 768px */
