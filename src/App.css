@@ -162,6 +162,8 @@ a {
   outline: none;
 }
 
+/* Cart Styling */
+
 .items-container {
   display: flex;
   justify-content: center;
@@ -182,6 +184,23 @@ a {
   gap: 1rem;
 }
 
+.remove-item-btn {
+  max-width: fit-content;
+  padding: 5px 10px;
+  border: none;
+  border-radius: 5px;
+  background-color: red;
+  color: white;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+.remove-item-btn:hover,
+.remove-item-btn:active,
+.remove-item-btn:focus {
+  background-color: rgb(141, 14, 14);
+}
+
 .cart-title {
   width: 500px;
   display: flex;
@@ -197,11 +216,13 @@ a {
   font-size: larger;
   text-align: center;
   background-color: green;
+  color: white;
   cursor: pointer;
 }
 
 .cart-title .btn:disabled {
-  background-color: red;
+  background-color: rgb(141, 14, 14);
+  cursor: not-allowed;
 }
 
 .cart-image figure {
