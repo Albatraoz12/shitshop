@@ -188,10 +188,11 @@ a {
 .cart-wrapper {
   display: flex;
   justify-content: space-around;
-  align-items: center;
   gap: 1rem;
   width: 90%;
+  height: 350px;
   margin: 0 auto;
+  flex-wrap: wrap;
 }
 
 .cart-wrapper div h1 {
@@ -206,6 +207,7 @@ a {
   align-items: center;
   gap: 1rem;
   max-width: 600px;
+  padding: 10px 0px;
   margin: 0 auto;
   border-top: 1px solid black;
   border-bottom: 1px solid black;
@@ -269,8 +271,7 @@ a {
 .checkout-container {
   display: flex;
   flex-direction: column;
-  justify-content: center;
-  gap: 0.5rem;
+  /* justify-content: center; */
   width: 400px;
 }
 
