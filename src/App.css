@@ -162,6 +162,29 @@ a {
   outline: none;
 }
 
+.items-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 1rem;
+  max-width: 600px;
+  margin: 0 auto;
+  flex: 1;
+}
+
+.cart-title {
+  width: 500px;
+}
+.cart-image figure {
+  border-right: 1px solid black;
+  padding-right: 1rem;
+}
+.cart-image figure img {
+  height: 150px;
+  max-width: 100px;
+  object-fit: contain;
+}
+
 /* Media query for screen sizes less than 768px */
 @media only screen and (max-width: 768px) {
   .product-container {
