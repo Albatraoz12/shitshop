@@ -11,11 +11,13 @@ function App() {
     <CartProvider>
       <BrowserRouter>
         <Navbar />
-        <Routes>
-          <Route path='/' element={<Home />} />
-          <Route path='/product/:id' element={<Product />} />
-          <Route path='/cart' element={<Cart />} />
-        </Routes>
+        <main>
+          <Routes>
+            <Route path='/' element={<Home />} />
+            <Route path='/product/:id' element={<Product />} />
+            <Route path='/cart' element={<Cart />} />
+          </Routes>
+        </main>
       </BrowserRouter>
     </CartProvider>
   );
