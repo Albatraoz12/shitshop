@@ -23,7 +23,7 @@ const Cart = () => {
   };
 
   return (
-    <section>
+    <section className='cart-wrapper'>
       <h1>Cart</h1>
       {cart && cart.length > 0 ? (
         cart.map((item) => (
@@ -41,11 +41,17 @@ const Cart = () => {
                 <button
                   onClick={() => updateQuantity(item.id, -1)}
                   disabled={item.quantity <= 1}
+                  className='btn'
                 >
                   -
                 </button>
                 {item.quantity}
-                <button onClick={() => updateQuantity(item.id, 1)}>+</button>
+                <button
+                  onClick={() => updateQuantity(item.id, 1)}
+                  className='btn'
+                >
+                  +
+                </button>
               </p>
             </div>
           </div>
