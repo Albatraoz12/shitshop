@@ -13,6 +13,15 @@ const Cart = () => {
     );
   };
 
+  const removeItem = (id) => {
+    // Remove item from cart state
+    setCart((prevCart) => prevCart.filter((item) => item.id !== id));
+
+    // Remove item from localStorage
+    const updatedCart = cart.filter((item) => item.id !== id);
+    localStorage.setItem('cart', JSON.stringify(updatedCart));
+  };
+
   return (
     <section>
       <h1>Cart</h1>
@@ -26,6 +35,7 @@ const Cart = () => {
             </div>
             <div className='cart-title'>
               <h2>{item.title}</h2>
+              <button onClick={() => removeItem(item.id)}>Remove</button>
               <p>
                 Quantity:
                 <button
