@@ -201,12 +201,15 @@ a {
   font-weight: 200;
 }
 
+.item-container {
+  max-width: 100%;
+}
+
 .items-container {
   display: flex;
   justify-content: center;
   align-items: center;
   gap: 1rem;
-  max-width: 600px;
   padding: 10px 0px;
   margin: 0 auto;
   border-top: 1px solid black;

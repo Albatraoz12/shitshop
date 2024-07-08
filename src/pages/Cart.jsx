@@ -24,7 +24,7 @@ const Cart = () => {
 
   return (
     <section className='cart-wrapper'>
-      <div>
+      <div className='item-container'>
         <h1>SHOPPING CART ITEMS</h1>
         {cart && cart.length > 0 ? (
           cart.map((item) => (
