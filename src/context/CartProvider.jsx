@@ -10,13 +10,17 @@ const CartProvider = ({ children }) => {
     return savedCart ? JSON.parse(savedCart) : [];
   });
 
+  const calculateTotal = () => {
+    return cart.reduce((sum, item) => sum + item.price * item.quantity, 0);
+  };
+
   useEffect(() => {
     // Save the cart to localStorage whenever it changes
     localStorage.setItem('cart', JSON.stringify(cart));
   }, [cart]);
 
   return (
-    <CartContext.Provider value={{ cart, setCart }}>
+    <CartContext.Provider value={{ cart, setCart, calculateTotal }}>
       {children}
     </CartContext.Provider>
   );
