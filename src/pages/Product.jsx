@@ -1,9 +1,11 @@
-import { useEffect, useState } from 'react';
+import { useContext, useEffect, useState } from 'react';
 import { useParams } from 'react-router-dom';
+import { CartContext } from '../context/CartProvider';
 
 const Product = () => {
   const { id } = useParams();
   const [product, setProduct] = useState(null);
+  const { cart, setCart } = useContext(CartContext);
 
   useEffect(() => {
     const fetchProduct = async () => {
@@ -14,6 +16,19 @@ const Product = () => {
     };
     fetchProduct();
   }, [id]);
+
+  // Handle add to cart
+  const addToCart = () => {
+    const newItem = {
+      id: product.id,
+      title: product.title,
+      description: product.description,
+      image: product.image,
+      price: product.price,
+    };
+
+    setCart([...cart, newItem]);
+  };
 
   return (
     <section className='product-container'>
@@ -28,7 +43,9 @@ const Product = () => {
           <div className='product-desc-container'>
             <h1>{product.title}</h1>
             <span className='product-price'>{product.price} €</span>
-            <button className='add-btn'>Add to cart!</button>
+            <button className='add-btn' onClick={addToCart}>
+              Add to cart!
+            </button>
             <div className='product-desc'>
               <h2>Description</h2>
               <p>{product.description}</p>
