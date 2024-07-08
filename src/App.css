@@ -185,6 +185,21 @@ a {
 
 /* Cart Styling */
 
+.cart-wrapper {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  gap: 1rem;
+  width: 90%;
+  margin: 0 auto;
+}
+
+.cart-wrapper div h1 {
+  font-size: 1em;
+  margin-bottom: 2px;
+  font-weight: 200;
+}
+
 .items-container {
   display: flex;
   justify-content: center;
@@ -192,17 +207,14 @@ a {
   gap: 1rem;
   max-width: 600px;
   margin: 0 auto;
-  border: 1px solid black;
-  border-radius: 10px;
+  border-top: 1px solid black;
+  border-bottom: 1px solid black;
   padding-inline: 10px;
 }
 
-.cart-wrapper {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  gap: 1rem;
+.checkout-container {
+  border: 1px solid black;
+  width: auto;
 }
 
 .remove-item-btn {
@@ -229,6 +241,10 @@ a {
   gap: 1rem;
 }
 
+.cart-title h2 {
+  font-size: 16px;
+}
+
 .cart-title .btn {
   padding: 1px 10px;
   border-radius: 5px;
@@ -247,7 +263,6 @@ a {
 }
 
 .cart-image figure {
-  border-right: 1px solid black;
   padding-right: 1rem;
 }
 .cart-image figure img {
