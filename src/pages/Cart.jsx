@@ -86,7 +86,7 @@ const Cart = () => {
           <h2>Total:</h2>
           <span>{calculateTotal()} €</span>
         </div>
-        <Link to='/' className='link-btn'>
+        <Link to='/checkout' className='link-btn'>
           Proceed to checkout
         </Link>
       </div>
