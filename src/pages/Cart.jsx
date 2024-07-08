@@ -24,47 +24,65 @@ const Cart = () => {
 
   return (
     <section className='cart-wrapper'>
-      <h1>Cart</h1>
-      {cart && cart.length > 0 ? (
-        cart.map((item) => (
-          <div key={item.id} className='items-container'>
-            <div className='cart-image'>
-              <figure>
-                <img src={item.image} alt={item.title} />
-              </figure>
-            </div>
-            <div className='cart-title'>
-              <h2>{item.title}</h2>
-              <button
-                onClick={() => removeItem(item.id)}
-                className='remove-item-btn'
-              >
-                Remove
-              </button>
-              <p>
-                Quantity:
+      <div>
+        <h1>SHOPPING CART ITEMS</h1>
+        {cart && cart.length > 0 ? (
+          cart.map((item) => (
+            <div key={item.id} className='items-container'>
+              <div className='cart-image'>
+                <figure>
+                  <img src={item.image} alt={item.title} />
+                </figure>
+              </div>
+              <div className='cart-title'>
+                <div>
+                  <h2>{item.title}</h2>
+                  <p>{item.price} €</p>
+                </div>
                 <button
-                  onClick={() => updateQuantity(item.id, -1)}
-                  disabled={item.quantity <= 1}
-                  className='btn'
+                  onClick={() => removeItem(item.id)}
+                  className='remove-item-btn'
                 >
-                  -
+                  Remove
                 </button>
-                {item.quantity}
-                <button
-                  onClick={() => updateQuantity(item.id, 1)}
-                  className='btn'
-                >
-                  +
-                </button>
-              </p>
+                <p>
+                  Quantity:
+                  <button
+                    onClick={() => updateQuantity(item.id, -1)}
+                    disabled={item.quantity <= 1}
+                    className='btn'
+                  >
+                    -
+                  </button>
+                  {item.quantity}
+                  <button
+                    onClick={() => updateQuantity(item.id, 1)}
+                    className='btn'
+                  >
+                    +
+                  </button>
+                </p>
+              </div>
             </div>
+          ))
+        ) : (
+          <h2>No items in your cart!</h2>
+        )}
+      </div>
+      <div className='checkout-container'>
+        <h1>ORDER SUMMARY</h1>
+        <div className='order-summary'>
+          <div className='order-value'>
+            <p>Order value</p>
+            <span>{calculateTotal()} €</span>
           </div>
-        ))
-      ) : (
-        <h2>No items in your cart!</h2>
-      )}
-      <h2>Total: {calculateTotal()} €</h2>
+          <div className='order-value'>
+            <p>Delivery</p>
+            <span>0 €</span>
+          </div>
+        </div>
+        <h2>Total: {calculateTotal()} €</h2>
+      </div>
     </section>
   );
 };

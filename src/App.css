@@ -212,11 +212,6 @@ a {
   padding-inline: 10px;
 }
 
-.checkout-container {
-  border: 1px solid black;
-  width: auto;
-}
-
 .remove-item-btn {
   max-width: fit-content;
   padding: 5px 10px;
@@ -269,6 +264,27 @@ a {
   height: 150px;
   max-width: 100px;
   object-fit: contain;
+}
+
+.checkout-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 0.5rem;
+  width: 400px;
+}
+
+.order-summary {
+  border-top: 1px solid grey;
+  border-bottom: 1px solid grey;
+  padding: 10px 0px;
+}
+
+.order-value {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin: 5px auto;
 }
 
 /* Media query for screen sizes less than 768px */
