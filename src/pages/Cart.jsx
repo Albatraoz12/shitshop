@@ -1,5 +1,6 @@
 import { useContext } from 'react';
 import { CartContext } from '../context/CartProvider';
+import { Link } from 'react-router-dom';
 
 const Cart = () => {
   const { cart, setCart, calculateTotal } = useContext(CartContext);
@@ -81,7 +82,11 @@ const Cart = () => {
             <span>0 €</span>
           </div>
         </div>
-        <h2>Total: {calculateTotal()} €</h2>
+        <div className='total-value'>
+          <h2>Total:</h2>
+          <span>{calculateTotal()} €</span>
+        </div>
+        <Link to='/'>Proceed to checkout</Link>
       </div>
     </section>
   );
