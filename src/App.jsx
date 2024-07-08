@@ -4,17 +4,20 @@ import './App.css';
 import Home from './pages/Home';
 import Product from './pages/Product';
 import Cart from './pages/Cart';
+import { CartProvider } from './context/CartProvider';
 
 function App() {
   return (
-    <BrowserRouter>
-      <Navbar />
-      <Routes>
-        <Route path='/' element={<Home />} />
-        <Route path='/product/:id' element={<Product />} />
-        <Route path='/cart' element={<Cart />} />
-      </Routes>
-    </BrowserRouter>
+    <CartProvider>
+      <BrowserRouter>
+        <Navbar />
+        <Routes>
+          <Route path='/' element={<Home />} />
+          <Route path='/product/:id' element={<Product />} />
+          <Route path='/cart' element={<Cart />} />
+        </Routes>
+      </BrowserRouter>
+    </CartProvider>
   );
 }
 
