@@ -2,8 +2,17 @@ import { useContext } from 'react';
 import { CartContext } from '../context/CartProvider';
 
 const Cart = () => {
-  const { cart, calculateTotal } = useContext(CartContext);
+  const { cart, setCart, calculateTotal } = useContext(CartContext);
   console.log(cart);
+
+  const updateQuantity = (id, increment) => {
+    setCart((prevCart) =>
+      prevCart.map((item) =>
+        item.id === id ? { ...item, quantity: item.quantity + increment } : item
+      )
+    );
+  };
+
   return (
     <section>
       <h1>Cart</h1>
@@ -17,7 +26,17 @@ const Cart = () => {
             </div>
             <div className='cart-title'>
               <h2>{item.title}</h2>
-              <p>Quantity: {item.quantity}</p>
+              <p>
+                Quantity:
+                <button
+                  onClick={() => updateQuantity(item.id, -1)}
+                  disabled={item.quantity <= 1}
+                >
+                  -
+                </button>
+                {item.quantity}
+                <button onClick={() => updateQuantity(item.id, 1)}>+</button>
+              </p>
             </div>
           </div>
         ))
