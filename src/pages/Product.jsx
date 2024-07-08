@@ -25,9 +25,24 @@ const Product = () => {
       description: product.description,
       image: product.image,
       price: product.price,
+      quantity: 1,
     };
 
-    setCart([...cart, newItem]);
+    const updatedCart = cart.map((item) => {
+      if (item.id === newItem.id) {
+        // Item is already in the cart, update the quantity
+        return { ...item, quantity: item.quantity + 1 };
+      }
+      return item;
+    });
+
+    const hasItem = cart.some((item) => item.id === newItem.id);
+    if (!hasItem) {
+      // Item is not in the cart, add it
+      updatedCart.push(newItem);
+    }
+
+    setCart(updatedCart);
   };
 
   return (
