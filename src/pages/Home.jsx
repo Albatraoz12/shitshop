@@ -18,10 +18,10 @@ const Home = () => {
   }, []);
 
   return (
-    <main>
+    <section>
       <h1>All items</h1>
       {items && <CardList products={items} />}
-    </main>
+    </section>
   );
 };
 
