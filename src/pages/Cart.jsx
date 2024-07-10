@@ -3,7 +3,7 @@ import { CartContext } from '../context/CartProvider';
 import { Link } from 'react-router-dom';
 
 const Cart = () => {
-  const { cart, setCart, calculateTotal } = useContext(CartContext);
+  const { cart, setCart, calculateTotal, isEmpty } = useContext(CartContext);
 
   const updateQuantity = (id, increment) => {
     setCart((prevCart) =>
@@ -12,6 +12,8 @@ const Cart = () => {
       )
     );
   };
+
+  console.log(isEmpty);
 
   const removeItem = (id) => {
     // Remove item from cart state
@@ -85,9 +87,15 @@ const Cart = () => {
           <h2>Total:</h2>
           <span>{calculateTotal()} €</span>
         </div>
-        <Link to='/checkout' className='link-btn'>
-          Proceed to checkout
-        </Link>
+        {isEmpty ? (
+          <button className='link-btn' disabled>
+            Proceed to checkout
+          </button>
+        ) : (
+          <Link to='/checkout' className='link-btn'>
+            Proceed to checkout
+          </Link>
+        )}
       </div>
     </section>
   );

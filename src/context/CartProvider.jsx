@@ -9,6 +9,11 @@ const CartProvider = ({ children }) => {
     const savedCart = localStorage.getItem('cart');
     return savedCart ? JSON.parse(savedCart) : [];
   });
+  const [isEmpty, setIsEmpty] = useState(true);
+
+  useEffect(() => {
+    setIsEmpty(cart.length === 0);
+  }, [cart, setIsEmpty]);
 
   const calculateTotal = () => {
     return cart.reduce((sum, item) => sum + item.price * item.quantity, 0);
@@ -20,7 +25,9 @@ const CartProvider = ({ children }) => {
   }, [cart]);
 
   return (
-    <CartContext.Provider value={{ cart, setCart, calculateTotal }}>
+    <CartContext.Provider
+      value={{ cart, setCart, calculateTotal, isEmpty, setIsEmpty }}
+    >
       {children}
     </CartContext.Provider>
   );
