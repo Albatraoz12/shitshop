@@ -4,7 +4,6 @@ import { Link } from 'react-router-dom';
 
 const Cart = () => {
   const { cart, setCart, calculateTotal } = useContext(CartContext);
-  console.log(cart);
 
   const updateQuantity = (id, increment) => {
     setCart((prevCart) =>
