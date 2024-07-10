@@ -1,3 +1,5 @@
+import { Link } from 'react-router-dom';
+
 const Checkout = () => {
   return (
     <form className='form-container'>
@@ -27,7 +29,9 @@ const Checkout = () => {
         <input type='text' name='postCode' id='postCode' />
       </div>
 
-      <button className='link-btn'>Pay purchase</button>
+      <Link to='/purchase-complete' className='link-btn'>
+        Pay purchase
+      </Link>
     </form>
   );
 };
