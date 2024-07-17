@@ -13,8 +13,6 @@ const Cart = () => {
     );
   };
 
-  console.log(isEmpty);
-
   const removeItem = (id) => {
     // Remove item from cart state
     setCart((prevCart) => prevCart.filter((item) => item.id !== id));
