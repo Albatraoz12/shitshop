@@ -4,9 +4,11 @@ import { CartContext } from '../context/CartProvider';
 
 const Product = () => {
   const { id } = useParams();
-  const [product, setProduct] = useState(null);
   const { cart, setCart } = useContext(CartContext);
+  const [product, setProduct] = useState(null);
+  const [hasProduct, setHasProduct] = useState(false);
 
+  // Fetch product details when component mounts or id changes
   useEffect(() => {
     const fetchProduct = async () => {
       const response = await fetch(`https://fakestoreapi.com/products/${id}`);
@@ -14,8 +16,17 @@ const Product = () => {
       setProduct(data);
       return data;
     };
+
     fetchProduct();
   }, [id]);
+
+  // Check if the product is already in cart
+  useEffect(() => {
+    if (product) {
+      const productInCart = cart.find((item) => item.id === product.id);
+      setHasProduct(!!productInCart); // Set hasProduct to true if product is in cart
+    }
+  }, [cart, product]);
 
   // Handle add to cart
   const addToCart = () => {
@@ -43,6 +54,7 @@ const Product = () => {
     }
 
     setCart(updatedCart);
+    setHasProduct(true); // Update state to reflect item in cart
   };
 
   return (
@@ -58,9 +70,15 @@ const Product = () => {
           <div className='product-desc-container'>
             <h1>{product.title}</h1>
             <span className='product-price'>{product.price} €</span>
-            <button className='add-btn' onClick={addToCart}>
-              Add to cart!
-            </button>
+            {hasProduct ? (
+              <button className='add-btn' disabled>
+                Already in cart!
+              </button>
+            ) : (
+              <button className='add-btn' onClick={addToCart}>
+                Add to cart!
+              </button>
+            )}
             <div className='product-desc'>
               <h2>Description</h2>
               <p>{product.description}</p>
