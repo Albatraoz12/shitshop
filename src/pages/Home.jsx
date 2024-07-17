@@ -18,10 +18,12 @@ const Home = () => {
   }, []);
 
   return (
-    <section>
-      <h1>All items</h1>
+    <main>
+      <section className='home-page'>
+        <h1>All items</h1>
+      </section>
       {items && <CardList products={items} />}
-    </section>
+    </main>
   );
 };
 
