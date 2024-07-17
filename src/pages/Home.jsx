@@ -20,7 +20,12 @@ const Home = () => {
   return (
     <main>
       <section className='home-page'>
-        <h1>All items</h1>
+        <h1>Shitstore</h1>
+
+        <p>
+          Your shopping journey begins here! Browse our offers and get inspired.
+          😊🛒
+        </p>
       </section>
       {items && <CardList products={items} />}
     </main>

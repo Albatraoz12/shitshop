@@ -25,7 +25,14 @@
   display: flex;
   justify-content: center;
   align-items: center;
+  flex-direction: column;
   overflow: hidden;
+  margin-bottom: 2rem;
+}
+
+.home-page p {
+  width: 550px;
+  text-align: center;
 }
 
 .home-page::before {
