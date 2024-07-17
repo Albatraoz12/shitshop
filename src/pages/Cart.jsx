@@ -66,7 +66,15 @@ const Cart = () => {
             </div>
           ))
         ) : (
-          <h2>No items in your cart!</h2>
+          <>
+            <h3 style={{ paddingTop: '0.5rem' }}>No items in your cart!</h3>
+            <p style={{ paddingTop: '0.5rem' }}>
+              <Link to='/' style={{ color: 'green', paddingTop: '1rem' }}>
+                Go back
+              </Link>{' '}
+              To the store and shop some products!
+            </p>
+          </>
         )}
       </div>
       <div className='checkout-container'>
